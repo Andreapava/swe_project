@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">MegAlexa</string>
+    <string name="logo_description">Logo di Amazon Alexa</string>
+    <string name="version">Versione 1.0</string>
+
+    <string name="login">Entra</string>
+    <string name="register">Registrati</string>
+    <string name="go">Vai</string>
+    <string name="last_access">Ultimo accesso:</string>
+    <string name="password_minimum">La password deve contenere almeno 10 caratteri</string>
+    <string name="invalid_email">Indirizzo email non valido</string>
+    <string name="invalid_password">La password non è valida</string>
+    <string name="error_connection_text">La tua connessione ad internet potrebbe essere spenta oppure i server di AWS potrebbero avere dei problemi.</string>
+    <string name="error_connection">Errore di connessione</string>
+    <string name="congratulations">Congratulazioni!</string>
+    <string name="back_to_home">Torna alla pagina iniziale</string>
+    <string name="title_activity_workflow">Workflow</string>
+    <string name="no_access">Nessun accesso recente</string>
+</resources>
