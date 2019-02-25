@@ -29,6 +29,7 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 
+import com.swe.duckware.megalexa.alexa.Workflow;
 import com.swe.duckware.megalexa.netrequests.InputValidator;
 
 import java.text.SimpleDateFormat;
@@ -83,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
         storeLastAccess();
 
         //Start a new intent
-        Intent intent = new Intent(LoginActivity.this, StatusActivity.class);
+        Intent intent = new Intent(LoginActivity.this, WorkflowActivity.class);
 
         /*
          *

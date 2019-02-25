@@ -16,4 +16,6 @@
     <string name="back_to_home">Torna alla pagina iniziale</string>
     <string name="title_activity_workflow">Workflow</string>
     <string name="no_access">Nessun accesso recente</string>
+    <string name="delete">Cancella</string>
+    <string name="new_workflow">Nuovo workflow</string>
 </resources>
