@@ -1,38 +1,43 @@
 package com.swe.duckware.megalexa;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.swe.duckware.megalexa.alexa.Workflow;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WorkflowActivity extends AppCompatActivity {
+public class WorkflowActivity extends AppCompatActivity implements  creaWfDialogFragment.passaNomeActivity{
 
     private ArrayList<Workflow> mWorkflows = new ArrayList<>();
 
     private RecyclerView mRecyclerView;
-
-    private WorkflowRecycleViewAdapter mWorkflowAdapter = new WorkflowRecycleViewAdapter(mWorkflows);
+    private RecyclerView.Adapter mWorkflowAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private List<Workflow> wf = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workflow);
-
+        mRecyclerView = (RecyclerView) findViewById(R.id.listWorkflow);
         //RecyclerView setup
-        mRecyclerView = findViewById(R.id.listWorkflow);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+        // use this setting to improve performance if you know that changes
+        // in content do not change the layout size of the RecyclerView
+        mRecyclerView.setHasFixedSize(true);
+
+        // use a linear layout manager
+        layoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(layoutManager);
+
+        // specify an adapter (see also next example)
+        mWorkflowAdapter = new workflowAdapter(wf);
         mRecyclerView.setAdapter(mWorkflowAdapter);
-
-        //Test some workflows
-        List<Workflow> wf = new ArrayList<>();
-        wf.add(new Workflow("prova WF 1"));
-        wf.add(new Workflow("prova WF 2"));
-
-        setWorkflows(wf);
     }
 
     public void setWorkflows(List<Workflow> workflows) {
@@ -44,6 +49,19 @@ public class WorkflowActivity extends AppCompatActivity {
                 );
             }
         }
+    }
+    @Override
+    public void onOk(String text){
+        wf.add(new Workflow(text));
+        mWorkflowAdapter.notifyDataSetChanged();
+    }
+
+    public void addWorkflow(View view) {
+        FragmentManager fm = getSupportFragmentManager();
+
+        creaWfDialogFragment editNameDialogFragment = creaWfDialogFragment.newInstance("Some Title");
+
+        editNameDialogFragment.show(fm, "fragment_edit_name");
     }
 
 }

@@ -21,4 +21,9 @@
     <string name="no_access">No recent access</string>
     <string name="delete">Delete</string>
     <string name="new_workflow">New workflow</string>
+    <string name="enter_wf_name">Enter the name of the Workflow</string>
+    <string name="ok">ok</string>
+    <string name="test">test</string>
+    <string name="set_wf">SET</string>
+    <string name="mywf_placeholder">my workflow</string>
 </resources>

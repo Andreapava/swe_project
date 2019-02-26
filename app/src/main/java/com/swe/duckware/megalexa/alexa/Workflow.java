@@ -31,4 +31,7 @@ public class Workflow {
         res = 31 * res + wfName.hashCode();
         return res;
     }
+    public String getWfName() {
+        return wfName;
+    }
 }

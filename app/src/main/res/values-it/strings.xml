@@ -18,4 +18,8 @@
     <string name="no_access">Nessun accesso recente</string>
     <string name="delete">Cancella</string>
     <string name="new_workflow">Nuovo workflow</string>
+    <string name="enter_wf_name">Inserisci il nome del nuovo Workflow</string>
+    <string name="ok">ok</string>
+    <string name="test">test</string>
+    <string name="set_wf">SET</string>
 </resources>
